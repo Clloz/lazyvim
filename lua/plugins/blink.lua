@@ -1,0 +1,20 @@
+-- ~/.config/nvim/lua/plugins/blink.lua
+return {}
+-- return {
+--   {
+--     "saghen/blink.cmp",
+--     opts = function(_, opts)
+--       opts.keymap = opts.keymap or {}
+--
+--       -- keep default preset
+--       opts.keymap.preset = "default"
+--
+--       -- manual trigger (example)
+--       opts.keymap["<C-Space>"] = {
+--         function(cmp)
+--           cmp.show()
+--         end,
+--       }
+--     end,
+--   },
+-- }

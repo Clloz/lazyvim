@@ -3,7 +3,7 @@ return {
     "github/copilot.vim",
     event = "InsertEnter",
     config = function()
-      vim.g.copilot_enabled = false
+      -- vim.g.copilot_enabled = true
       -- Disable default <Tab> mapping (we’ll set our own)
       -- vim.g.copilot_no_tab_map = true
 

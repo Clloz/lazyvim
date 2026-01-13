@@ -8,5 +8,7 @@ else
   vim.opt.number = true
   vim.opt.relativenumber = true
 end
+vim.opt.smoothscroll = true
+-- vim.opt.scrolloff = 8
 -- Set to false to disable auto format
 -- vim.g.lazyvim_eslint_auto_format = true

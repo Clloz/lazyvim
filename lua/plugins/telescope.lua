@@ -17,5 +17,19 @@ return {
         ["dd"] = actions.delete_buffer,
       })
     end,
+    keys = {
+      -- 保留默认的 ff 和 fg 等...
+      -- 新增一个搜索“所有文件”（含隐藏和忽略文件）的快捷键
+      {
+        "<leader>fa",
+        function()
+          require("telescope.builtin").find_files({
+            hidden = true,
+            no_ignore = true, -- 可选：是否穿透 .gitignore（如 node_modules）
+          })
+        end,
+        desc = "Find all files (hidden+ignored)",
+      },
+    },
   },
 }

@@ -2,18 +2,27 @@
 return {
   {
     "anirudhsundar/codex.nvim",
-    config = function()
+    keys = {
+      {
+        "<leader>ce",
+        function()
+          require("codex").ask("@this: ", { submit = true })
+        end,
+        mode = { "n", "x" },
+        desc = "Ask Codex",
+      },
+      {
+        "<leader>cx",
+        function()
+          require("codex").select()
+        end,
+        mode = { "n", "x" },
+        desc = "Codex actions",
+      },
+    },
+    init = function()
       vim.o.autoread = true
-
       vim.g.codex_opts = {}
-
-      vim.keymap.set({ "n", "x" }, "<leader>ce", function()
-        require("codex").ask("@this: ", { submit = true })
-      end, { desc = "Ask Codex" })
-
-      vim.keymap.set({ "n", "x" }, "<leader>cx", function()
-        require("codex").select()
-      end, { desc = "Codex actions" })
     end,
   },
 }

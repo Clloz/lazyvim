@@ -12,3 +12,30 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TermLeave" }, {
     vim.opt.relativenumber = true
   end,
 })
+
+vim.filetype.add({
+  filename = {
+    [".gitconfig.local"] = "gitconfig",
+  },
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.schedule(function()
+      vim.lsp.document_color.enable(false, { bufnr = ev.buf })
+    end)
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      apply = true,
+      context = {
+        only = { "source.fixAll.eslint" },
+        diagnostics = {},
+      },
+    })
+  end,
+})

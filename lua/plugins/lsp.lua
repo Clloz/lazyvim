@@ -16,9 +16,10 @@ return {
           settings = {
             run = "onSave",
             codeActionOnSave = {
-              enable = true,
+              enable = false,
               mode = "all",
             },
+            format = false,
           },
         },
 

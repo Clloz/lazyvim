@@ -30,12 +30,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
   callback = function()
-    vim.lsp.buf.code_action({
-      apply = true,
-      context = {
-        only = { "source.fixAll.eslint" },
-        diagnostics = {},
-      },
-    })
+    vim.cmd("silent! LspEslintFixAll")
   end,
 })

@@ -1,16 +1,17 @@
-return {
-  "CopilotC-Nvim/CopilotChat.nvim",
-  dependencies = {
-    "github/copilot.vim", -- Copilot 必须依赖
-    "nvim-lua/plenary.nvim",
-  },
-  opts = {
-    model = "claude-sonnet-4.6", -- ✅ 默认模型
-
-    window = {
-      layout = "vertical", -- 右侧侧边栏
-      width = 0.3, -- ✅ 30% 宽度（核心）
-      border = "rounded",
-    },
-  },
-}
+return {}
+-- return {
+--   "CopilotC-Nvim/CopilotChat.nvim",
+--   dependencies = {
+--     "github/copilot.vim", -- Copilot 必须依赖
+--     "nvim-lua/plenary.nvim",
+--   },
+--   opts = {
+--     model = "claude-sonnet-4.6", -- ✅ 默认模型
+--
+--     window = {
+--       layout = "vertical", -- 右侧侧边栏
+--       width = 0.3, -- ✅ 30% 宽度（核心）
+--       border = "rounded",
+--     },
+--   },
+-- }

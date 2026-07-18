@@ -24,7 +24,7 @@ vim.keymap.set("n", "Q", "q", { desc = "Record macro with Q" })
 local wk = require("which-key")
 
 wk.add({
-  { "<leader>y", group = "Yank path" },
+  { "<leader>y", group = "Yank" },
 })
 
 local function copy(text, desc)
@@ -60,4 +60,11 @@ vim.keymap.set("n", "<leader>yR", function()
   copy(("%s:%d"):format(vim.fn.expand("%:p"), vim.fn.line(".")), "Copied absolute path:line")
 end, {
   desc = "Absolute path:line",
+})
+
+vim.keymap.set("n", "<leader>ya", function()
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  copy(table.concat(lines, "\n"), "Copied entire buffer")
+end, {
+  desc = "Entire buffer",
 })

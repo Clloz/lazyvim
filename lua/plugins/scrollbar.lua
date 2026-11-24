@@ -24,7 +24,7 @@ return {
       scrollbar = {
         preset = "intellij",
         visibility = "active",
-        window = { border = "rounded" },
+        window = { border = "none" },
       },
       minimap = {
         enabled = false,
